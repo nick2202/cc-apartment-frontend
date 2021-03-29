@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WG - MatchingKriterien festlegen</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div w3-include-html="../parts/header.html"></div>
+    <div class="row">
+        <div class="p-sm-4"/>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-md-auto">
+        <h1 style="color:#FFA500"> Registrierung WG - Angaben zur Wunschmitbewohner </h1>
+        <div class="p-2"/>
+    </div>
+</div>
+<div class="container">
+
+    <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"
+         style="background-color:#FFA500; border-radius: 10px;">
+        <div class="col-xxl-8 offset-xxl-2 mr-5 justify-content-center">
+            <div class="mb-2">Hier gebt Ihr an, wie Euer Wunschmitbewohner aussieht.<br/>
+                Dafür bitte alle für Euch passenden Optionen angeben!
+            </div>
+            <form id="wg-register-form-kriterien-alter">
+            <label class="label-kriterien mt-2" for="wg-alter-min">Alter zwischen:</label>
+            <div class="d-flex">
+                <input type="number" class="form-control" id="wg-alter-min" placeholder=""
+                       name="alter">
+                <div class="py-2 px-3">und</div>
+                <input type="number" class="form-control" id="wg-alter-max" placeholder=""
+                       name="alter">
+            </div>
+            </form>
+            <form id="wg-register-form-kriterien">
+                <div class="form-inline my-1 mr-2">
+                    <label class="label-kriterien mt-2" for="wg-geschlecht">Geschlecht:</label>
+                    <select class="form-select" id="wg-geschlecht" name="geschlecht">
+                        <option value="m">männlich</option>
+                        <option value="w">weiblich</option>
+                        <option value="d">divers</option>
+                    </select>
+                </div>
+                <div class="form-inline my-1 mr-2">
+                    <label class="label-kriterien" for="wg-raucher">Rauchergewohnheiten:</label>
+                    <select class="form-select" id="wg-raucher" name="raucher">
+                        <option value="Raucher">Raucher</option>
+                        <option value="Nichtraucher">Nichtraucher</option>
+                    </select>
+                </div>
+                <div class="form-inline my-1 mr-2">
+                    <label class="label-kriterien" for="wg-ernaehrung">Ernährung:</label>
+                    <select class="form-select" id="wg-ernaehrung" name="ernaehrung">
+                        <option value="vegetarisch">vegetarisch</option>
+                        <option value="vegan">vegan</option>
+                        <option value="omnivor">omnivor</option>
+                    </select>
+                </div>
+                <div class="form-inline my-1 mr-2">
+                    <label class="label-kriterien" for="wg-taetigkeit">Taetigkeit:</label>
+                    <select class="form-select" id="wg-taetigkeit" name="taetigkeit">
+                        <option value="Student">Student</option>
+                        <option value="Schüler">Schüler</option>
+                        <option value="Azubi">Azubi</option>
+                        <option value="Praktikant">Praktikant</option>
+                        <option value="arbeitslos">arbeitslos</option>
+                        <option value="berufstätig">berufstätig</option>
+                    </select>
+                </div>
+                <div class="form-inline my-1 mr-2">
+                    <label class="label-kriterien" for="wg-politisch">Politische Gesinnung:</label>
+                    <select class="form-select" id="wg-politisch" name="politischeGesinnung">
+                        <option value="links">links</option>
+                        <option value="rechts">rechts</option>
+                        <option value="konservativ">konservativ</option>
+                        <option value="grün">grün</option>
+                        <option value="liberal">liberal</option>
+                        <option value="unpolitisch">unpolitisch</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="d-flex col-xxl-6 offset-xxl-3">
+        <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="register-wg-angaben.html"
+           style="background-color:#FFA500; color:white">Zurück
+        </a>
+        <a onclick="createKriterien('wg-register-form-kriterien', '/kriterien/wg', 'register-wg-hobbies.html')"
+           class="d-flex p-2 mt-3 mx-1 ml-auto btn"
+           style="background-color:#FFA500; color:white">Weiter
+        </a>
+    </div>
+</div>
+
+
+<div w3-include-html="../parts/footer.html"></div>
+
+<script>w3IncludeHTML();</script>
+<script src="../../scripts/constants.js"></script>
+<script src="../../scripts/helper.js"></script>
+<script src="../../scripts/wg.js"></script>
+</body>
+</html>
