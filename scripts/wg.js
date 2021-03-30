@@ -12,7 +12,7 @@ function createKriterien(formId, endpoint, nextPage) {
     console.log("fired")
     const registerForm = document.getElementById(formId);
     const alterNodeList = document.getElementsByName("alter");
-    let alterArray= [];
+    let alterArray = [];
     Array.from(alterNodeList).forEach(element => {
         alterArray.push(element.value)
     })
@@ -41,7 +41,26 @@ function createHobbiesInteressen(hobOrInt, endpoint, nextPage) {
     const id = getCookie("entityId")
     patchRequestWithId(endpoint, id, jsonForm);
     document.location.href = nextPage;
-}
+};
+
+function createAccount(endpoint, nextPage) {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+    const passwordRepeat = document.getElementById("password-repeat").value;
+    if (password === passwordRepeat) {
+        let jsonForm = {
+            email: email,
+            password: password
+        }
+        const id = getCookie("entityId");
+        console.log("a");
+        console.log(id);
+        postRequestWithId(endpoint, id, jsonForm)
+        document.location.href = nextPage;
+    } else{
+        throw new Error("Passwörter stimmen nicht überein")
+    }
+};
 
 
 function clickThat() {

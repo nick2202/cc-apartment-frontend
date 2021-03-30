@@ -1,7 +1,7 @@
 async function getMatches() {
     // const id = getCookie("entityId")
-    const matches = await getRequestWithId("/match/wg", "6061fc294a2ef01d60e8750f");
-    const bews = await getRequestWithId("/match/wg/getBews", "6061fc294a2ef01d60e8750f");
+    const matches = await getRequestWithId("/match/wg", "6062fbf95716955a1c1c4208");
+    const bews = await getRequestWithId("/match/wg/getBews", "6062fbf95716955a1c1c4208");
     let containerMatches = document.getElementById("cont-matches");
     for (let i = 0; i < bews.length; i++) {
         let outerDiv = document.createElement("div")
