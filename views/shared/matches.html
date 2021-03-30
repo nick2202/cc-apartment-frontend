@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WG Angaben zur Wohnung machen</title>
+    <link rel="stylesheet" href="../../css/bootstrap.css">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <div w3-include-html="../parts/header.html"></div>
+    <div class="row">
+        <div class="p-sm-4"/>
+    </div>
+</div>
+
+<div class="row justify-content-center">
+    <div class="col-auto">
+        <h1 style="color:#FFA500"> Eure Matches </h1>
+        <a onclick="getMatches()"
+           class="d-flex p-2 mt-3 mx-1 ml-auto btn btn-outline-dark justify-content-center text-decoration-underline"
+           style="background-color:#FFA500; color:white">Zeige Eure Matches an!
+        </a>
+        <div class="p-2"/>
+    </div>
+</div>
+<div class="container">
+    <div id= "cont-matches">
+<!--        <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"-->
+<!--             style="background-color:#FFA500; border-radius: 10px;">-->
+<!--            <div class="col-xxl-10 offset-xxl-1 mr-5 justify-content-center">-->
+<!--                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Noto_Emoji_Oreo_1f602.svg/100px-Noto_Emoji_Oreo_1f602.svg.png">-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+
+
+</div>
+
+
+<div w3-include-html="../parts/footer.html"></div>
+
+<script>w3IncludeHTML();</script>
+<script src="../../scripts/constants.js"></script>
+<script src="../../scripts/helper.js"></script>
+<script src="../../scripts/match.js"></script>
+</body>
+</html>

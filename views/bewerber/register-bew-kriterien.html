@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WG MatchingKriterien festlegen</title>
+    <title>Bewerber - MatchingKriterien</title>
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
@@ -23,42 +23,45 @@
     </div>
 </div>
 <div class="container">
-    <form id="bew-register-form-kriterien">
-        <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"
-             style="background-color:#FFA500; border-radius: 10px;">
-            <div class="col-xxl-8 offset-xxl-2 mr-5 justify-content-center">
-                <div class="mb-2">Bitte mache hier Angaben zu Dir!</div>
+
+    <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"
+         style="background-color:#FFA500; border-radius: 10px;">
+        <div class="col-xxl-8 offset-xxl-2 mr-5 justify-content-center">
+            <div class="mb-2">Bitte mache hier Angaben zu Dir!</div>
+            <form id="wg-register-form-kriterien-alter">
+            <label class="label-kriterien mt-2" for="wg-alter">Alter:</label>
+            <div class="d-flex">
+                <input type="number" class="form-control" id="wg-alter" placeholder=""
+                       name="alter">
+            </div>
+            </form>
+            <form id="bew-register-form-kriterien">
                 <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien mt-2" for="bew-alter">Alter:</label>
-                    <input type="number" class="form-control" id="bew-alter" placeholder=""
-                           name="alter">
-                </div>
-                <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien mt-2" for="bew-geschlecht">Geschlecht:</label>
-                    <select class="form-select" id="bew-geschlecht" name="geschlecht">
-                        <option value="männlich">männlich</option>
-                        <option value="weiblich">weiblich</option>
-                        <option value="divers">divers</option>
+                    <label class="label-kriterien mt-2" for="wg-geschlecht">Geschlecht:</label>
+                    <select class="form-select" id="wg-geschlecht" name="geschlecht">
+                        <option value="m">männlich</option>
+                        <option value="w">weiblich</option>
+                        <option value="d">divers</option>
                     </select>
                 </div>
                 <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien" for="bew-raucher">Raucher?:</label>
-                    <select class="form-select" id="bew-raucher" name="raucher">
+                    <label class="label-kriterien" for="wg-raucher">Rauchgewohnheiten:</label>
+                    <select class="form-select" id="wg-raucher" name="raucher">
                         <option value="Raucher">Raucher</option>
                         <option value="Nichtraucher">Nichtraucher</option>
                     </select>
                 </div>
                 <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien" for="bew-ernaehrung">Ernährung:</label>
-                    <select class="form-select" id="bew-ernaehrung" name="ernaehrung">
+                    <label class="label-kriterien" for="wg-ernaehrung">Ernährung:</label>
+                    <select class="form-select" id="wg-ernaehrung" name="ernaehrung">
                         <option value="vegetarisch">vegetarisch</option>
                         <option value="vegan">vegan</option>
                         <option value="omnivor">omnivor</option>
                     </select>
                 </div>
                 <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien" for="bew-taetigkeit">Taetigkeit:</label>
-                    <select class="form-select" id="bew-taetigkeit" name="taetigkeit">
+                    <label class="label-kriterien" for="wg-taetigkeit">Taetigkeit:</label>
+                    <select class="form-select" id="wg-taetigkeit" name="taetigkeit">
                         <option value="Student">Student</option>
                         <option value="Schüler">Schüler</option>
                         <option value="Azubi">Azubi</option>
@@ -68,8 +71,8 @@
                     </select>
                 </div>
                 <div class="form-inline my-1 mr-2">
-                    <label class="label-kriterien" for="bew-politisch">Politische Gesinnung:</label>
-                    <select class="form-select" id="bew-politisch" name="politischeGesinnung">
+                    <label class="label-kriterien" for="wg-politisch">Politische Gesinnung:</label>
+                    <select class="form-select" id="wg-politisch" name="politischeGesinnung">
                         <option value="links">links</option>
                         <option value="rechts">rechts</option>
                         <option value="konservativ">konservativ</option>
@@ -78,18 +81,18 @@
                         <option value="unpolitisch">unpolitisch</option>
                     </select>
                 </div>
-            </div>
+            </form>
         </div>
-        <div class="d-flex col-xxl-6 offset-xxl-3">
-            <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="register-bew-angaben.html"
-               style="background-color:#FFA500; color:white">Zurück
-            </a>
-            <a onclick="createKriterien('bew-register-form-kriterien', 'kriterien/bewerber')" href="XXX.html"
-               class="d-flex p-2 mt-3 mx-1 ml-auto btn"
-               style="background-color:#FFA500; color:white">Weiter
-            </a>
-        </div>
-    </form>
+    </div>
+    <div class="d-flex col-xxl-6 offset-xxl-3">
+        <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="register-bew-angaben.html"
+           style="background-color:#FFA500; color:white">Zurück
+        </a>
+        <a onclick="createKriterien('bew-register-form-kriterien', '/kriterien/bewerber', 'register-bew-hobbies.html')"
+           class="d-flex p-2 mt-3 mx-1 ml-auto btn"
+           style="background-color:#FFA500; color:white">Weiter
+        </a>
+    </div>
 </div>
 
 

@@ -13,3 +13,27 @@ input[type=number] {
 .label-kriterien {
     font-weight: bold;
 }
+
+.pic-match{
+    max-height: 120px;
+    max-width: 120px;
+    margin-left: 20px;
+    border-radius: 50%;
+    border: 0;
+}
+
+#cont-matches {
+    font-weight: bold;
+    font-size: x-large;
+    font-family: Calibri;
+    color: white;
+}
+
+.o-div-ma {
+    background-color:#FFA500;
+    border-radius: 10px;
+}
+
+.i-div-ma {
+    margin: auto;
+}

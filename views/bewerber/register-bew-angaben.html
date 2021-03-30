@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>WG - Angaben zur Wohnung</title>
+    <title>Bewerber - Angaben zur Person</title>
     <link rel="stylesheet" href="../../css/bootstrap.css">
     <link rel="stylesheet" href="../../styles/style.css">
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
@@ -18,40 +18,30 @@
 
 <div class="row justify-content-center">
     <div class="col-md-auto">
-        <h1 style="color:#FFA500"> Registrierung WG - Angaben zur Wohnung </h1>
+        <h1 style="color:#FFA500"> Registrierung Bewerber - Angaben zu Dir </h1>
         <div class="p-2"/>
     </div>
 </div>
 <div class="container">
-    <form id="wg-register-form-adresse">
+    <form id="bew-register-form-person">
         <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"
              style="background-color:#FFA500; border-radius: 10px;">
             <div class="col-xxl-10 offset-xxl-1 mr-5 justify-content-center">
                 <div class="form-group row my-1 mx-2">
-                    <div class="col-9">
-                        <input type="text" class="form-control" id="strasse" placeholder="Straße"
-                               name="strasse">
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="vorname" placeholder="Vorname"
+                               name="vorname">
                     </div>
-                    <div class="col-3">
-                        <input type="number" class="form-control" id="hausnummer" placeholder="Nr"
-                               name="hausnummer">
-                    </div>
-                </div>
-                <div class="form-group row my-1 mx-2">
-                    <div class="col-3">
-                        <input type="number" class="form-control" id="plz" placeholder="PLZ"
-                               name="plz">
-                    </div>
-                    <div class="col-9">
-                        <input type="text" class="form-control" id="stadt" placeholder="Ort"
-                               name="ort">
+                    <div class="col-6">
+                        <input type="text" class="form-control" id="nachname" placeholder="Nachname"
+                               name="nachname">
                     </div>
                 </div>
                 <div class="form-group row mt-4 mx-2">
                     <div class="mb-3">
                                         <textarea class="form-control" id="beschreibung" rows="4"
                                                   name="beschreibung"
-                                                  placeholder="Schreibt etwas zu Euch und Eurer WG!"></textarea>
+                                                  placeholder="Schreib etwas über Dich!"></textarea>
                     </div>
                 </div>
             </div>
@@ -60,7 +50,7 @@
             <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="/"
                style="background-color:#FFA500; color:white">Zurück
             </a>
-            <a onclick="createEntity('wg-register-form-adresse', '/wg', 'register-wg-kriterien.html')"
+            <a onclick="createEntity('bew-register-form-person', '/bewerber', 'register-bew-kriterien.html')"
                class="d-flex p-2 mt-3 mx-1 ml-auto btn"
                style="background-color:#FFA500; color:white">Weiter
             </a>

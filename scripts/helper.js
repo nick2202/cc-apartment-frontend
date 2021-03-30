@@ -9,7 +9,8 @@ function postRequest(endpoint, values, nextPage) {
         if (res.ok) {
             console.log("SUCC")
             console.log(res)
-            res.json().then(data => {
+            res.json()
+                .then(data => {
                 console.log(JSON.stringify(data))
                 console.log(data._id)
                 document.cookie = "entityId=" + data._id;
@@ -21,7 +22,7 @@ function postRequest(endpoint, values, nextPage) {
     }).catch(err => console.log("ERROR"))
 };
 
-function postRequestWithId(endpoint, entityId, values, nextPage) {
+function postRequestWithId(endpoint, entityId, values) {
     fetch(BASE_URL + endpoint + "/" + entityId, {
         method: "POST",
         headers: {
@@ -35,9 +36,9 @@ function postRequestWithId(endpoint, entityId, values, nextPage) {
                 console.log(res)
                 res.json().then(data => {
                     console.log(JSON.stringify(data))
-                    console.log(data.n)
+                    console.log(data)
                 })
-                    .then(document.location.href = nextPage)
+
             } else {
                 console.log("Not SUCC")
             }
@@ -61,7 +62,6 @@ function patchRequestWithId(endpoint, entityId, values) {
                     console.log(JSON.stringify(data))
                     console.log(data.n)
                 })
-                    // .then(document.location.href = nextPage)
             } else {
                 console.log("Not SUCC")
             }
@@ -69,20 +69,37 @@ function patchRequestWithId(endpoint, entityId, values) {
         .catch(err => console.trace())
 };
 
-function getRequest(url) {
-    fetch("url")
+function getRequestWithId(endpoint, entityId) {
+    return fetch(BASE_URL + endpoint + "/" + entityId, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
         .then(res => {
             if (res.ok) {
                 console.log("SUCC")
                 console.log(res)
+                return res.json()
+
+                // .then(document.location.href = nextPage)
             } else {
                 console.log("Not SUCC")
             }
         })
-        .then(data => console.log(data))
-        .catch(err => console.log("ERROR"))
+        .then(data => {
+            console.log(JSON.stringify(data))
+            console.log(data)
+            return data
+        })
+        .catch(err => console.trace())
 };
 
+/**
+ * Get the value of a cookie with specified name
+ * @param   {String}    cname   The name of the cookie to find
+ * @return  {String}            The value of the cookie
+ */
 function getCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

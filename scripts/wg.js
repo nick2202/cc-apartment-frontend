@@ -16,38 +16,33 @@ function createKriterien(formId, endpoint, nextPage) {
     Array.from(alterNodeList).forEach(element => {
         alterArray.push(element.value)
     })
-    let alterObject = {alter: alterArray}
+    let alterObject = {alter: alterArray};
     const formData = new FormData(registerForm);
     let jsonForm = Object.fromEntries(formData);
-    Object.assign(jsonForm, alterObject)
-    const id = getCookie("entityId")
-    postRequestWithId(endpoint, id, jsonForm, nextPage);
+    Object.assign(jsonForm, alterObject);
+    const id = getCookie("entityId");
+    postRequestWithId(endpoint, id, jsonForm);
+    document.location.href = nextPage;
 }
 
-function createHobbies(formId, endpoint) {
+function createHobbiesInteressen(hobOrInt, endpoint, nextPage) {
     console.log("fired")
-    const hobbiesNodeList = document.getElementsByTagName("input");
-    console.log(hobbiesNodeList)
-    let hobbiesMap = new Map([]);
-    Array.from(hobbiesNodeList).forEach(element => {
+    const hobIntNodeList = document.getElementsByTagName("input");
+    console.log(hobIntNodeList)
+    let hobIntMap = new Map([]);
+    Array.from(hobIntNodeList).forEach(element => {
         if (element.checked) {
-            hobbiesMap.set(element.name, parseFloat(element.value))
+            hobIntMap.set(element.name, parseFloat(element.value))
         }
     })
-    console.log(hobbiesMap)
-    let jsonForm = {hobbies: [Object.fromEntries(hobbiesMap)]}
+    console.log(hobIntMap)
+    let jsonForm = {[hobOrInt]: [Object.fromEntries(hobIntMap)]}
     console.log(jsonForm)
     const id = getCookie("entityId")
     patchRequestWithId(endpoint, id, jsonForm);
+    document.location.href = nextPage;
 }
 
-function getInputItems(inputs) {
-    var inputItems = {};
-    Array.from(inputs).forEach(function(item) {
-        inputItems[item.name] = inputItems[item.value];
-    });
-    return JSON.stringify(inputItems);
-}
 
 function clickThat() {
     console.log("fired")
