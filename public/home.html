@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Landing Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="styles/style.css">
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
 <div class="container">
-    <div w3-include-html="views/parts/header.html"></div>
+    <div w3-include-html="parts/header.html"></div>
     <div class="row">
-        <div class="p-sm-4"/>
     </div>
 </div>
 
@@ -22,7 +23,7 @@
     <div class="d-flex p-1 justify-content-center align-items-center">
         <div class="row justify-content-center">
             <div class="col-6">
-                <a href="views/wg/register-wg-angaben.html">
+                <a href="wg/register-wg-angaben.html">
                     <div class="card" style="width: 18rem;">
                         <img src="resources/lp_mitbewohner.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -32,7 +33,7 @@
                 </a>
             </div>
             <div class="col-6">
-                <a href="views/bewerber/register-bew-angaben.html">
+                <a href="bewerber/register-bew-angaben.html">
                 <div class="card" style="width: 18rem;">
                     <img src="resources/lp_wg.png" class="card-img-top" alt="...">
                     <div class="card-body">
@@ -43,10 +44,20 @@
             </div>
         </div>
     </div>
+    <div class="d-flex-md justify-content-center align-items-center">
+        <h3 id="description" style="color:#FFA500">
+            cc:Apartment ist eine Vermittlungsbörse für WG-Suchende und WGs. <br/>
+            Unser Matching-Algorithmus erspart Dir das endlose Schreiben oder Lesen von Bewerbungen. <br/>
+            Anhand vielfältiger Kriterien wird die Kompatibilität von Euch ermittelt. <br/>
+            Melde Dich einfach in unter 5 Minuten an, lehn Dich zurück und warte auf Dein erstes Match! <br/>
+        </h3>
+    </div>
 </div>
-<div class="col-12" w3-include-html="views/parts/footer.html"></div>
+<div class="col-12" w3-include-html="parts/footer.html"></div>
+
 
 <script>w3IncludeHTML();</script>
+<script src="scripts/helper.js"></script>
 <script src="scripts/checkLogin.js"></script>
 </body>
 </html>

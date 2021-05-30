@@ -37,3 +37,12 @@ input[type=number] {
 .i-div-ma {
     margin: auto;
 }
+#description {
+    /*position:absolute;*/
+    /*top:20%;*/
+    padding-top: 50px;
+    text-align: center;
+}
+body {
+    padding-top: 90px;
+}

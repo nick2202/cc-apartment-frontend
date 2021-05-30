@@ -11,10 +11,10 @@ function postRequest(endpoint, values, nextPage) {
             console.log(res)
             res.json()
                 .then(data => {
-                console.log(JSON.stringify(data))
-                console.log(data._id)
-                document.cookie = "entityId=" + data._id;
-            })
+                    console.log(JSON.stringify(data))
+                    console.log(data._id)
+                    document.cookie = "entityId=" + data._id
+                })
                 .then(document.location.href = nextPage)
         } else {
             console.log("Not SUCC")
@@ -95,6 +95,32 @@ function getRequestWithId(endpoint, entityId) {
         .catch(err => console.trace())
 };
 
+function requestWithToken(method, endpoint, token) {
+    return fetch(BASE_URL + endpoint, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": token
+        },
+    })
+        .then(res => {
+            if (res.ok) {
+                console.log("SUCC")
+                console.log(res)
+                return res.json()
+            } else {
+                console.log("Not SUCC")
+            }
+        })
+        .then(data => {
+            console.log(JSON.stringify(data))
+            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+            console.log(data)
+            return data;
+        })
+        .catch(err => console.trace())
+};
+
 /**
  * Get the value of a cookie with specified name
  * @param   {String}    cname   The name of the cookie to find
@@ -114,4 +140,10 @@ function getCookie(cname) {
         }
     }
     return "";
-}
+};
+
+function logout(){
+    document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=strict;";
+    console.log("logout")
+    document.location.href = "/";
+};

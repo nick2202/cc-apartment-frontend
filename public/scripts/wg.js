@@ -57,7 +57,7 @@ function createAccount(endpoint, nextPage) {
         console.log(id);
         postRequestWithId(endpoint, id, jsonForm)
         document.location.href = nextPage;
-    } else{
+    } else {
         throw new Error("Passwörter stimmen nicht überein")
     }
 };

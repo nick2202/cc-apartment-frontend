@@ -1,8 +1,15 @@
 async function getMatches() {
-    // const id = getCookie("entityId")
-    const matches = await getRequestWithId("/match/wg", "6062fbf95716955a1c1c4208");
-    const bews = await getRequestWithId("/match/wg/getBews", "6062fbf95716955a1c1c4208");
+    const token = getCookie("token")
+    console.log(token)
+    const a = await requestWithToken("POST","/match/wg", token);
+    console.log("a= " + a)
+    const matches = await requestWithToken("GET", "/match/wg", token);
+    console.log("matches= " + matches)
+    const bews = await requestWithToken("GET", "/match/wg/getBews", token);
     let containerMatches = document.getElementById("cont-matches");
+    while (containerMatches.firstChild) {
+        containerMatches.removeChild(containerMatches.lastChild);
+    }
     for (let i = 0; i < bews.length; i++) {
         let outerDiv = document.createElement("div")
         outerDiv.setAttribute("class", "col-xxl-8 offset-xxl-2 p-2 mb-2 justify-content-center o-div-ma")

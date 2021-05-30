@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>WG - MatchingKriterien Hobbies</title>
-    <link rel="stylesheet" href="../../css/bootstrap.css">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../styles/style.css">
     <script src="http://www.w3schools.com/lib/w3data.js"></script>
 </head>
 <body>
@@ -18,7 +18,7 @@
 
 <div class="row justify-content-center">
     <div class="col-md-auto">
-        <h1 style="color:#FFA500"> Registrierung Bewerber - Hobbies </h1>
+        <h1 style="color:#FFA500"> Registrierung WG - Hobbies </h1>
         <div class="p-2"/>
     </div>
 </div>
@@ -27,8 +27,9 @@
     <div class="col-xxl-6 offset-xxl-3 p-2 justify-content-center"
          style="background-color:#FFA500; border-radius: 10px;">
         <div class="col-xxl-8 offset-xxl-2 mr-5 justify-content-center">
-            <div class="mb-2">Wie gerne magst Du folgende Hobbies? <br/>
-                1 = gar nicht gerne, 5 = sehr gerne
+            <div class="mb-2">Wie gerne mögt Ihr folgende Hobbies und wie wichtig ist
+                es euch, dass Euer zukünftiger Mitbewohner sie mag? <br/>
+                1 = sehr wenig, 5 = sehr doll
             </div>
             <div class="d-inline my-1 mr-2">
                 <div class="label-kriterien mt-2">Brettspiele:</div>
@@ -124,10 +125,10 @@
     </div>
 </div>
 <div class="d-flex col-xxl-6 offset-xxl-3">
-    <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="register-bew-kriterien.html"
+    <a class="d-flex p-2 mt-3 mx-1 me-auto btn" href="register-wg-kriterien.html"
        style="background-color:#FFA500; color:white">Zurück
     </a>
-    <a onclick="createHobbiesInteressen('hobbies', '/kriterien/bewerber', 'register-bew-interessen.html')"
+    <a onclick="createHobbiesInteressen('hobbies', '/kriterien/wg', 'register-wg-interessen.html')"
        class="d-flex p-2 mt-3 mx-1 ml-auto btn"
        style="background-color:#FFA500; color:white">Weiter
     </a>
@@ -138,8 +139,9 @@
 <div w3-include-html="../parts/footer.html"></div>
 
 <script>w3IncludeHTML();</script>
-<script src="../../scripts/constants.js"></script>
-<script src="../../scripts/helper.js"></script>
-<script src="../../scripts/wg.js"></script>
+<script src="../scripts/constants.js"></script>
+<script src="../scripts/helper.js"></script>
+<script src="../scripts/checkLogin.js"></script>
+<script src="../scripts/wg.js"></script>
 </body>
 </html>
