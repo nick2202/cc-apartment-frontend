@@ -7,17 +7,13 @@ function postRequest(endpoint, values, nextPage) {
         body: JSON.stringify(values)
     }).then(res => {
         if (res.ok) {
-            console.log("SUCC")
-            console.log(res)
             res.json()
                 .then(data => {
-                    console.log(JSON.stringify(data))
-                    console.log(data._id)
                     document.cookie = "entityId=" + data._id
                 })
                 .then(document.location.href = nextPage)
         } else {
-            console.log("Not SUCC")
+            console.log("ERROR")
         }
     }).catch(err => console.log("ERROR"))
 };
@@ -32,8 +28,6 @@ function postRequestWithId(endpoint, entityId, values) {
     })
         .then(res => {
             if (res.ok) {
-                console.log("SUCC")
-                console.log(res)
                 res.json().then(data => {
                     console.log(JSON.stringify(data))
                     console.log(data)
@@ -57,10 +51,9 @@ function patchRequestWithId(endpoint, entityId, values) {
         .then(res => {
             if (res.ok) {
                 console.log("SUCC")
-                console.log(res)
-                res.json().then(data => {
-                    console.log(JSON.stringify(data))
-                    console.log(data.n)
+                res.json()
+                    .then(data => {
+                    console.log("SUCC")
                 })
             } else {
                 console.log("Not SUCC")
@@ -79,7 +72,6 @@ function getRequestWithId(endpoint, entityId) {
         .then(res => {
             if (res.ok) {
                 console.log("SUCC")
-                console.log(res)
                 return res.json()
 
                 // .then(document.location.href = nextPage)
@@ -88,8 +80,6 @@ function getRequestWithId(endpoint, entityId) {
             }
         })
         .then(data => {
-            console.log(JSON.stringify(data))
-            console.log(data)
             return data
         })
         .catch(err => console.trace())
@@ -106,19 +96,21 @@ function requestWithToken(method, endpoint, token) {
         .then(res => {
             if (res.ok) {
                 console.log("SUCC")
-                console.log(res)
                 return res.json()
             } else {
                 console.log("Not SUCC")
             }
         })
         .then(data => {
-            console.log(JSON.stringify(data))
-            console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
-            console.log(data)
             return data;
         })
         .catch(err => console.trace())
+};
+
+function logout(){
+    document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=strict;";
+    console.log("logged out")
+    document.location.href = "/";
 };
 
 /**
@@ -142,8 +134,4 @@ function getCookie(cname) {
     return "";
 };
 
-function logout(){
-    document.cookie = "token=;expires=Thu, 01 Jan 1970 00:00:00 UTC;path=/;sameSite=strict;";
-    console.log("logout")
-    document.location.href = "/";
-};
+

@@ -1,13 +1,10 @@
 async function getMatches() {
     const token = getCookie("token")
-    console.log(token)
     const a = await requestWithToken("POST","/match/wg", token);
-    console.log("a= " + a)
     const matches = await requestWithToken("GET", "/match/wg", token);
-    console.log("matches= " + matches)
     const bews = await requestWithToken("GET", "/match/wg/getBews", token);
     let containerMatches = document.getElementById("cont-matches");
-    while (containerMatches.firstChild) {
+    while (containerMatches.firstChild != null) {
         containerMatches.removeChild(containerMatches.lastChild);
     }
     for (let i = 0; i < bews.length; i++) {
@@ -34,7 +31,7 @@ async function getMatches() {
         image.src = bews[i].bilderUrls[0]
         image.setAttribute("class", "pic-match")
         innerLeftDiv.appendChild(image)
-        innerMiddleLeftDiv.innerHTML = "Score:" + "<br/>" + (Math.round(matches[i].faktor * 100)) + " %"
+        innerMiddleLeftDiv.innerHTML = await "Score:" + "<br/>" + (Math.round(matches[i].faktor * 100)) + " %"
         innerMiddleRightDiv.innerHTML = bews[i].vorname + ", " + bews[i].matchingKriterien[0].alter[0]
         innerRightDiv.append(buttonChat, buttonProfil)
         row.appendChild(innerLeftDiv)
@@ -43,7 +40,6 @@ async function getMatches() {
         row.appendChild(innerRightDiv)
         outerDiv.appendChild(row)
         containerMatches.appendChild(outerDiv);
-
     }
 }
 

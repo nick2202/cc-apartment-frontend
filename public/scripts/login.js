@@ -14,10 +14,8 @@ function login(nextPage) {
     }).then(res => {
         if (res.status === 200) {
             console.log("SUCC")
-            console.log(res)
             res.json()
                 .then(data => {
-                    console.log(data.token)
                     var expireDate = getExpireDate();
                     document.cookie = "token=" + data.token + "; expires=" + expireDate + ";path=/;sameSite=strict";
                 })
